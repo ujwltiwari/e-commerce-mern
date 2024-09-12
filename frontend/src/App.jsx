@@ -1,10 +1,11 @@
-import './App.css'
+import "./App.css";
+import Layout from "@/components/layout/Layout.jsx";
 function App() {
   return (
     <>
-      <h1>React App</h1>
+      <Layout></Layout>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
