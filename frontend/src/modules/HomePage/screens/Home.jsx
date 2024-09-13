@@ -9,7 +9,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel.jsx";
-import { Card, CardContent } from "@/components/ui/card.jsx";
+import FooterInfoContainer from "@/modules/HomePage/components/FooterInfo/FooterInfoContainer.jsx";
+import FooterBanner from "@/modules/HomePage/components/FooterBanner.jsx";
 const Home = () => {
   return (
     <>
@@ -43,6 +44,9 @@ const Home = () => {
           <CarouselNext />
         </Carousel>
       </div>
+
+      <FooterInfoContainer />
+      <FooterBanner />
     </>
   );
 };
