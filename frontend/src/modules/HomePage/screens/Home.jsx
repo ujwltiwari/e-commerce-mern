@@ -1,6 +1,15 @@
 import Banner from "@/assets/images/sofa.png";
 import CarouselComponent from "@/components/CarouselComponent.jsx";
 import BannerGrid from "@/modules/HomePage/components/BannerGrid.jsx";
+import SingleProductCard from "@/components/ProductCard/SingleProductCard.jsx";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel.jsx";
+import { Card, CardContent } from "@/components/ui/card.jsx";
 const Home = () => {
   return (
     <>
@@ -15,6 +24,25 @@ const Home = () => {
         </p>
       </div>
       <BannerGrid />
+      <h1 className="text-[40px] font-semibold text-left">New Arrivals</h1>
+      <div className="flex py-20">
+        <Carousel>
+          <CarouselContent>
+            {Array.from({ length: 22 }).map((_, idx) => (
+              <CarouselItem key={idx} className="basis-1/5">
+                <SingleProductCard
+                  isNew={true}
+                  discount={50}
+                  title="Table Lamp"
+                  price={24.99}
+                />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
+      </div>
     </>
   );
 };
