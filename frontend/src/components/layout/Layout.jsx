@@ -1,14 +1,14 @@
 import Footer from "@/components/layout/Footer.jsx";
 import Header from "@/components/layout/Header.jsx";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, className }) => {
   return (
-      <>
-       <Header />
-        {children}
-        <Footer />
-      </>
-  )
-}
+    <>
+      <Header />
+      <div className={className ?? ""}>{children}</div>
+      <Footer />
+    </>
+  );
+};
 
-export default Layout
+export default Layout;

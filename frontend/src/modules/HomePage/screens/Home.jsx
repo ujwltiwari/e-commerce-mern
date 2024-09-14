@@ -1,7 +1,6 @@
 import Banner from "@/assets/images/sofa.png";
 import CarouselComponent from "@/components/CarouselComponent.jsx";
 import BannerGrid from "@/modules/HomePage/components/BannerGrid.jsx";
-import SingleProductCard from "@/components/ProductCard/SingleProductCard.jsx";
 import {
   Carousel,
   CarouselContent,
@@ -11,6 +10,7 @@ import {
 } from "@/components/ui/carousel.jsx";
 import FooterInfoContainer from "@/modules/HomePage/components/FooterInfo/FooterInfoContainer.jsx";
 import FooterBanner from "@/modules/HomePage/components/FooterBanner.jsx";
+import SingleProductCard from "@/modules/Product/components/ProductCard/SingleProductCard.jsx";
 const Home = () => {
   return (
     <>
