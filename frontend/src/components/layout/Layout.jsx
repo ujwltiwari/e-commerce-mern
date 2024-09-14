@@ -1,4 +1,3 @@
-import Footer from "@/components/layout/Footer.jsx";
 import Header from "@/components/layout/Header.jsx";
 
 const Layout = ({ children, className }) => {
@@ -6,7 +5,6 @@ const Layout = ({ children, className }) => {
     <>
       <Header />
       <div className={className ?? ""}>{children}</div>
-      <Footer />
     </>
   );
 };

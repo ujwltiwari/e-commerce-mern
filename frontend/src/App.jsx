@@ -6,15 +6,7 @@ import ShopHome from "@/modules/Shop/screens/ShopHome.jsx";
 function App() {
   return (
     <>
-      <Layout>
-        {/*<Router>*/}
-        {/*  <Routes>*/}
-        {/*    <Route path="/" component={Home} />*/}
-        {/*    <Route path="/shop" component={ShopHome} />*/}
-        {/*  </Routes>*/}
-        {/*</Router>*/}
-        <Home />
-      </Layout>
+      <Home />
     </>
   );
 }

@@ -10,6 +10,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import Rating from "@/assets/icons/Rating.jsx";
 
 const Content = () => {
   const colors = [
@@ -48,12 +49,7 @@ const Content = () => {
         <div className="flex flex-col pb-4 w-full border-b border-solid border-b-gray-200 max-md:max-w-full">
           {/* Review Summary */}
           <div className="flex gap-2.5 items-center items-start text-xs leading-loose text-neutral-900">
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/ac91ee13fa60a089929cfb3c84d88c4c7e44993d53054e7d2e3c0f8ca3250815?placeholderIfAbsent=true&apiKey=69881ca4efe24956bf287a23a24c936c"
-              alt=""
-              className="object-contain shrink-0 self-stretch my-auto aspect-[5.49] w-[88px]"
-            />
+            <Rating />
             <div className="self-stretch my-auto">11 Reviews</div>
           </div>
 
@@ -182,26 +178,18 @@ const Content = () => {
                 <h3 className="text-sm font-semibold leading-loose text-zinc-500">
                   Packaging
                 </h3>
-                <div className="flex gap-3 mt-4">
-                  <img
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/0a21f7e3db716a7750313eabbb1ffea005ce6814f77ef87f04d0a5894336f48d?placeholderIfAbsent=true&apiKey=69881ca4efe24956bf287a23a24c936c"
-                    alt=""
-                    className="object-contain shrink-0 aspect-square w-[60px]"
-                  />
-                  <div className="flex flex-col">
-                    <h3 className="text-sm leading-loose text-neutral-900">
-                      TRAY TABLE
-                    </h3>
-                    <div className="text-xs leading-6 text-zinc-500">
-                      30 1/2x6 1/4x30 1/2 &quot;
-                    </div>
-                    <div className="text-xs leading-6 text-zinc-500">
-                      Weight: 11.36 lbs
-                    </div>
-                    <div className="text-xs leading-6 text-zinc-500">
-                      Package(s): 1
-                    </div>
+                <div className="flex flex-col">
+                  <h3 className="text-sm leading-loose text-neutral-900">
+                    TRAY TABLE
+                  </h3>
+                  <div className="text-xs leading-6 text-zinc-500">
+                    30 1/2x6 1/4x30 1/2 &quot;
+                  </div>
+                  <div className="text-xs leading-6 text-zinc-500">
+                    Weight: 11.36 lbs
+                  </div>
+                  <div className="text-xs leading-6 text-zinc-500">
+                    Package(s): 1
                   </div>
                 </div>
               </div>

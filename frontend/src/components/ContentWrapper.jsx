@@ -1,7 +1,9 @@
-const ContentWrapper = ({ children }) => {
+const ContentWrapper = ({ children, className }) => {
   return (
     <>
-      <div className="max-w-[1120px] m-auto">{children}</div>
+      <div className={`max-w-[1120px] m-auto ${className ?? ""}`}>
+        {children}
+      </div>
     </>
   );
 };

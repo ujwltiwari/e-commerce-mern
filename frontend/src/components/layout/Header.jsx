@@ -4,7 +4,7 @@ import { Separator } from "@/components/ui/separator.jsx";
 const Header = () => {
   return (
     <>
-      <header className="flex justify-between">
+      <header className="flex justify-between pt-4">
         <div className="scroll-m-20 text-[25px] font-semibold tracking-tight">
           3legant
         </div>
