@@ -18,7 +18,7 @@ import Footer from "@/components/layout/Footer.jsx";
 const Home = () => {
   return (
     <>
-      <ContentWrapper>
+      <ContentWrapper className="!max-w-[1280px]">
         <Layout />
         <CarouselComponent images={[Banner, Banner]} />
         <div className="flex gap-20 justify-between my-4">
@@ -31,8 +31,10 @@ const Home = () => {
           </p>
         </div>
         <BannerGrid />
-        <h1 className="text-[40px] font-semibold text-left">New Arrivals</h1>
-        <div className="flex py-20">
+        <h1 className="text-[40px] font-medium text-left w-[50px]">
+          New Arrivals
+        </h1>
+        <div className="flex py-20 pt-10">
           <Carousel>
             <CarouselContent>
               {Array.from({ length: 22 }).map((_, idx) => (
