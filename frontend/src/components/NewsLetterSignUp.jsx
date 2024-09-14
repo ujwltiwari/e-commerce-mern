@@ -1,4 +1,4 @@
-const NewsletterSignup = ({ className = "my-8" }) => {
+const NewsletterSignup = ({ className = "mt-8" }) => {
   return (
     <section
       className={`flex relative flex-col justify-center items-center px-20 py-24 w-full min-h-[360px] max-md:px-5 max-md:pt-24 max-md:max-w-full ${className ?? ""}`}
