@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="769ca305-9bd5-4378-bed2-bf8af831567e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../frontend/src/helpers/helpers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/modules/Product/AddProduct/AddProduct.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/modules/Product/AddProduct/AddProduct.jsx" afterDir="false" />
-    </list>
+    <list default="true" id="769ca305-9bd5-4378-bed2-bf8af831567e" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,7 +55,7 @@
       <option name="presentableId" value="Default" />
       <updated>1726112599217</updated>
       <workItem from="1726112601495" duration="17704000" />
-      <workItem from="1726459766456" duration="8397000" />
+      <workItem from="1726459766456" duration="9609000" />
     </task>
     <servers />
   </component>

@@ -24,7 +24,7 @@ const Products = ({ productsToShow = 12, products }) => {
             price={22.87}
             isNew={false}
             discount={20}
-            className="w-1/4 my-3"
+            className="w-[48%] sm:w-1/4 my-3"
           />
         ))}
         {currentPage * productsToShow < products.length && (

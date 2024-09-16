@@ -18,7 +18,7 @@ import Footer from "@/components/layout/Footer.jsx";
 const ProductDetails = () => {
   return (
     <>
-      <ContentWrapper className="!max-w-[1200px]">
+      <ContentWrapper className="!max-w-[1200px] px-4">
         <Layout className="font-inter">
           <BreadCrumbComp currentRoute="Living Room" />
           <div className="flex gap-8">

@@ -8,7 +8,7 @@ const Header = () => {
         <div className="scroll-m-20 text-[25px] font-semibold tracking-tight">
           3legant
         </div>
-        <div className="flex gap-12 items-center">
+        <div className="sm:flex gap-12 items-center hidden">
           {headerItems.map((item, idx) => (
             <p
               key={idx}

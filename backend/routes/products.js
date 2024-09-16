@@ -78,7 +78,7 @@ router.post('/', async (req, res) => {
       measurements,
       colors,
       additionalInfo,
-      images: imageResult ? [imageResult.file] : null, // Save image ID if available
+      images,
     })
 
     const result = await newProduct.save()
@@ -116,6 +116,23 @@ router.delete('/:id', adminOnly, async (req, res) => {
   const result = await Product.findOneAndDelete({
     _id,
   })
+  if (!result) {
+    return res.status(404).json({ message: 'Product not found' })
+  }
+  console.log('result', result)
+  res.status(200).json({
+    message: 'Product deleted successfully',
+    deletedProduct: result,
+  })
+})
+
+// Delete All Products
+router.delete('/', adminOnly, async (req, res) => {
+  if (!req.headers['deleteAll'] === 'true') {
+    return
+  }
+  const { id: _id } = req.params
+  const result = await Product.deleteMany()
   if (!result) {
     return res.status(404).json({ message: 'Product not found' })
   }
