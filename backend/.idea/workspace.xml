@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="769ca305-9bd5-4378-bed2-bf8af831567e" name="Changes" comment="" />
+    <list default="true" id="769ca305-9bd5-4378-bed2-bf8af831567e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../frontend/src/helpers/helpers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/modules/Product/AddProduct/AddProduct.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/modules/Product/AddProduct/AddProduct.jsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,9 +18,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2lxCz2EJCXP4nkMUNemAvcTmsb6" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -34,7 +39,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "prettierjs.PrettierConfiguration.Package": "C:\\Users\\tiwar\\OneDrive\\Desktop\\ecommerce-full-stack\\backend\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "preferences.fileTypes",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2023.2.3\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
@@ -55,6 +60,7 @@
       <option name="presentableId" value="Default" />
       <updated>1726112599217</updated>
       <workItem from="1726112601495" duration="17704000" />
+      <workItem from="1726459766456" duration="8397000" />
     </task>
     <servers />
   </component>
@@ -67,7 +73,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/lib/dbConn.js</url>
           <line>29</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
