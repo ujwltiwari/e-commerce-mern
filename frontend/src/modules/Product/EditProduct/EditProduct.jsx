@@ -123,7 +123,7 @@ const EditProduct = () => {
         <Sidebar className="w-1/5 max-w-[240px]" />
         <div className="w-[80%]">
           <h1 className="w-full text-left text-[32px] font-semibold bg-[#F5F6FA] py-1 px-8">
-            Add Product
+            Edit Product
           </h1>
           <div className="px-8 mt-8 flex gap-24">
             <div className="w-1/5 items-start flex-col">
@@ -131,6 +131,7 @@ const EditProduct = () => {
                 files={files}
                 setFiles={setFiles}
                 onSubmit={handleFileUpload}
+                showUploadBtn={false}
               />
               {currentDBImage && (
                 <div className="flex flex-col items-center justify-center">

@@ -6,7 +6,7 @@ import { toaster } from "@/helpers/helpers";
 import { Toaster } from "react-hot-toast";
 import { useCallback } from "react";
 
-const AddImage = ({ files, setFiles, onSubmit }) => {
+const AddImage = ({ files, setFiles, onSubmit, showUploadBtn = true }) => {
   const [imagePreview, setImagePreview] = useState("");
 
   const handleFileChange = useCallback((event) => {
@@ -38,7 +38,7 @@ const AddImage = ({ files, setFiles, onSubmit }) => {
         </div>
       )}
 
-      <Button onClick={onSubmit}>Upload</Button>
+      {showUploadBtn && <Button onClick={onSubmit}>Upload</Button>}
     </div>
   );
 };

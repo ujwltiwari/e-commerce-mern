@@ -9,6 +9,7 @@ import AddProduct from "@/modules/Product/AddProduct/AddProduct.jsx";
 import Admin from "@/Admin.jsx";
 import ProductsPage from "@/modules/Product/screens/ProductsPage.jsx";
 import EditProduct from "@/modules/Product/EditProduct/EditProduct.jsx";
+import SignUpPage from "@/modules/Auth/screees/SignUp.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
   {
     path: "/admin/product/:id",
     element: <EditProduct />,
+  },
+  {
+    path: "/register",
+    element: <SignUpPage />,
   },
 ]);
 createRoot(document.getElementById("root")).render(

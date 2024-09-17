@@ -13,7 +13,7 @@ const SingleProductCard = ({
   return (
     <Link to={url} className={`flex flex-col ${className ?? ""}`}>
       <div className={`w-full h-full max-w-[262px] max-h-[349px] relative`}>
-        <img src={images[0] || Bulb} alt={title} />
+        <img src={images?.[0] || Bulb} alt={title} />
         {isNew ? (
           <div className="w-[70px] absolute top-5 left-5 font-semibold uppercase text-[14px] bg-white rounded-sm shadow-md px-4 py-[1px]">
             New

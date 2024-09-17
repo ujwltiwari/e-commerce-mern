@@ -13,3 +13,11 @@ export const urlToFile = async (url, filename = "", mimeType = "image/png") => {
   const blob = await response.blob();
   return new File([blob], filename, { type: mimeType });
 };
+
+export const renameKey = (obj, oldKey, newKey) => {
+  const { [oldKey]: value, ...rest } = obj;
+  return {
+    ...rest,
+    [newKey]: value,
+  };
+};
