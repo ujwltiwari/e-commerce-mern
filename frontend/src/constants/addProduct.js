@@ -1,15 +1,15 @@
 export const addProductSidebarMenu = [
   {
     title: "Dashboard",
-    link: "#",
+    link: "/",
   },
   {
     title: "Products",
-    link: "#",
+    link: "/products",
   },
   {
     title: "Favourites",
-    link: "#",
+    link: "/favourites",
   },
   {
     title: "Inbox",

@@ -1,19 +1,22 @@
 import React from "react";
-
-// import component 👇
-import Drawer from "react-modern-drawer";
-
-//import styles 👇
 import "react-modern-drawer/dist/index.css";
 import { addProductSidebarMenu } from "@/constants/addProduct.js";
 import { Button } from "@/components/ui/button.jsx";
-
+import { useLocation } from "react-router-dom";
+import { textCapitalizer } from "@/helpers/helpers.js";
+import { Link } from "react-router-dom";
 const Sidebar = ({ className }) => {
-  const [selectedIdx, setSelectedIdx] = React.useState();
+  const [selectedIdx, setSelectedIdx] = React.useState("Dashboard");
   const [isOpen, setIsOpen] = React.useState(false);
   const toggleDrawer = () => {
     setIsOpen((prevState) => !prevState);
   };
+  const pathname = useLocation().pathname.split("/");
+  // console.log("currentRoute", currentRoute);
+  let currentRoute = pathname[pathname.length - 1];
+  if (currentRoute === "create" || currentRoute === "update") {
+    currentRoute = textCapitalizer("products");
+  }
 
   return (
     <>
@@ -28,16 +31,18 @@ const Sidebar = ({ className }) => {
       {/*</Drawer>*/}
       <div className={`px-2 ${className ?? ""} shadow-lg h-[100vh]`}>
         <div className="flex flex-col gap-4">
-          {addProductSidebarMenu.map((x, idx) => (
-            <Button
-              variant={selectedIdx === idx ? "default" : "ghost"}
-              key={idx}
-              onClick={() => setSelectedIdx(idx)}
-              className="h-[50px]"
-            >
-              {x.title}
-            </Button>
-          ))}
+          {addProductSidebarMenu.map((x, idx) => {
+            return (
+              <Button
+                variant={selectedIdx === x.title ? "default" : "ghost"}
+                onClick={() => setSelectedIdx(currentRoute)}
+                className="h-[50px]"
+                key={idx}
+              >
+                <Link to={`/admin${x.link}`}>{x.title}</Link>
+              </Button>
+            );
+          })}
         </div>
       </div>
     </>

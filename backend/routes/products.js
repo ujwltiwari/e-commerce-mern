@@ -22,6 +22,7 @@ router.get('/', async (req, res) => {
 
 // Get details of a specific products using it's ID
 router.get('/:id', async (req, res) => {
+  console.log('inside get product', req, res)
   try {
     const { id: _id } = req.params
     console.log('_id', _id)
@@ -90,15 +91,32 @@ router.post('/', async (req, res) => {
 
 // PUT /products/:id: Update an existing product (admin only).
 router.put('/:id', adminOnly, async (req, res) => {
-  const { _id, name, description, price, units } = req.body
-  if (!name || !price || !units) {
-    return res.status(400).send('Missing required fields')
-  }
-  const productObj = {
-    name,
+  const {
+    _id,
+    title,
     description,
     price,
     units,
+    categories,
+    measurements,
+    colors,
+    additionalInfo,
+    images,
+  } = req.body
+  console.log('requestBody', req.body)
+  if (!title || !price || !units) {
+    return res.status(400).send('Missing required fields')
+  }
+  const productObj = {
+    title,
+    description,
+    price,
+    units,
+    categories,
+    measurements,
+    colors,
+    additionalInfo,
+    images,
   }
 
   const updatedProduct = await Product.findOneAndUpdate({ _id }, productObj, {

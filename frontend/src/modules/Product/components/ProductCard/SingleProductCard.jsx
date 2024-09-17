@@ -1,17 +1,19 @@
 import Bulb from "@/assets/images/bulb.png";
+import { Link } from "react-router-dom";
 const SingleProductCard = ({
-  image,
+  images,
   title,
   price,
   isNew,
   discount,
   rating,
   className,
+  url,
 }) => {
   return (
-    <div className={`flex flex-col ${className ?? ""}`}>
+    <Link to={url} className={`flex flex-col ${className ?? ""}`}>
       <div className={`w-full h-full max-w-[262px] max-h-[349px] relative`}>
-        <img src={Bulb} alt={title} />
+        <img src={images[0] || Bulb} alt={title} />
         {isNew ? (
           <div className="w-[70px] absolute top-5 left-5 font-semibold uppercase text-[14px] bg-white rounded-sm shadow-md px-4 py-[1px]">
             New
@@ -29,7 +31,7 @@ const SingleProductCard = ({
         <p className="text-[16px] font-semibold text-left mt-[16px]">{title}</p>
       )}
       {price && <p className="text-[14px] font-semibold text-left">${price}</p>}
-    </div>
+    </Link>
   );
 };
 

@@ -37,6 +37,7 @@ const AddImage = ({ files, setFiles, onSubmit }) => {
           />
         </div>
       )}
+
       <Button onClick={onSubmit}>Upload</Button>
     </div>
   );

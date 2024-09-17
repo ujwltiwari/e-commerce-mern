@@ -30,7 +30,7 @@ const Products = ({ productsToShow = 12, products }) => {
         {currentPage * productsToShow < products.length && (
           <Button
             variant="outline"
-            className="m-auto mt-8"
+            className="m-auto my-8"
             rounded="full"
             size="lg"
             onClick={handleShowMore}

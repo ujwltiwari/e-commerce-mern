@@ -17,7 +17,6 @@ router.post('/', upload.single('file'), async (req, res) => {
 
     // Upload the file to BunnyCDN
     const result = await fileUploader(filePath, fileName)
-    console.log('Upload result:', result)
 
     return res
       .status(200)

@@ -1,21 +1,27 @@
 import { headerItems, headerIcons } from "@/constants/header.js";
 import React, { createElement } from "react";
 import { Separator } from "@/components/ui/separator.jsx";
+import { Link } from "react-router-dom";
+
 const Header = () => {
   return (
     <>
       <header className="flex justify-between pt-4">
-        <div className="scroll-m-20 text-[25px] font-semibold tracking-tight">
+        <Link
+          to="/"
+          className="scroll-m-20 text-[25px] font-semibold tracking-tight"
+        >
           3legant
-        </div>
+        </Link>
         <div className="sm:flex gap-12 items-center hidden">
           {headerItems.map((item, idx) => (
-            <p
+            <Link
               key={idx}
+              to={item.link}
               className="leading-7 font-medium text-[14px] cursor-pointer"
             >
               {item.title}
-            </p>
+            </Link>
           ))}
         </div>
         <div className="flex gap-6 items-center cursor-pointer">

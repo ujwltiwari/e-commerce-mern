@@ -7,6 +7,8 @@ import ShopHome from "@/modules/Shop/screens/ShopHome.jsx";
 import ProductDetails from "@/modules/Product/screens/ProductDetails.jsx";
 import AddProduct from "@/modules/Product/AddProduct/AddProduct.jsx";
 import Admin from "@/Admin.jsx";
+import ProductsPage from "@/modules/Product/screens/ProductsPage.jsx";
+import EditProduct from "@/modules/Product/EditProduct/EditProduct.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -26,7 +28,15 @@ const router = createBrowserRouter([
   },
   {
     path: "/admin/products",
+    element: <ProductsPage />,
+  },
+  {
+    path: "/admin/products/create",
     element: <AddProduct />,
+  },
+  {
+    path: "/admin/product/:id",
+    element: <EditProduct />,
   },
 ]);
 createRoot(document.getElementById("root")).render(

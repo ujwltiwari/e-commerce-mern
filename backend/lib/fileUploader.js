@@ -20,7 +20,6 @@ const fileUploader = async (filePath, fileName) => {
 
     // Make the request to upload the file to BunnyCDN
     const response = await axios.request(config)
-    console.log('File uploaded to BunnyCDN:', response)
 
     return {
       imageUrl: `https://ecom-mern.b-cdn.net/${fileName}`,

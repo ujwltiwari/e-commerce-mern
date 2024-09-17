@@ -1,6 +1,7 @@
 import React, { createElement } from "react";
 import { footerLinks, footerSocial } from "@/constants/footer.js";
 import { Separator } from "@/components/ui/separator.jsx";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (

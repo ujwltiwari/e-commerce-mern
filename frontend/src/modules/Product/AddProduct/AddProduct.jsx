@@ -1,4 +1,4 @@
-import Sidebar from "@/modules/Product/AddProduct/Sidebar.jsx";
+import Sidebar from "@/modules/Admin/components/Sidebar.jsx";
 import AdminLayout from "@/components/adminLayout/AdminLayout.jsx";
 import { useCallback, useState } from "react";
 import { CiEdit } from "react-icons/ci";
