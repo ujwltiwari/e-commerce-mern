@@ -42,11 +42,6 @@ const SignUpPage = () => {
         const result = await axios.post(
           "http://localhost:3000/register",
           formData,
-          {
-            headers: {
-              admin: true,
-            },
-          },
         );
         console.log(result);
         toaster("success", "Account successfully Created");
