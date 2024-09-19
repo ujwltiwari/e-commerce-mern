@@ -5,8 +5,19 @@ import { categoriesFilters, priceFilters } from "@/constants/shopFilters.js";
 import Products from "@/modules/Shop/components/Products.jsx";
 import ContentWrapper from "@/components/ContentWrapper.jsx";
 import Footer from "@/components/layout/Footer.jsx";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const ShopHome = () => {
+  const [products, setProducts] = useState([]);
+  const getAllProducts = async () => {
+    const result = await axios.get("http://localhost:3000/products");
+    setProducts(result.data);
+  };
+
+  useEffect(() => {
+    getAllProducts();
+  }, []);
   return (
     <>
       <ContentWrapper className="!max-w-[1280px] px-4">
@@ -20,7 +31,7 @@ const ShopHome = () => {
         {/*Filter Section*/}
 
         {/*Product Catalogue Section*/}
-        <Products products={Array.from({ length: 24 })} />
+        <Products products={products} />
         {/*Product Catalogue Section*/}
       </ContentWrapper>
       <Footer />

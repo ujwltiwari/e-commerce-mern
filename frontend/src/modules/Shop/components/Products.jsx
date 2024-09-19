@@ -17,16 +17,31 @@ const Products = ({ productsToShow = 12, products }) => {
   return (
     <>
       <div className="flex justify-between flex-wrap">
-        {visibleProducts.map((_, idx) => (
-          <SingleProductCard
-            key={idx}
-            title="Loveseat Sofa"
-            price={22.87}
-            isNew={false}
-            discount={20}
-            className="w-[48%] sm:w-1/4 my-3"
-          />
-        ))}
+        {visibleProducts.map((product, idx) => {
+          const {
+            images,
+            title,
+            price,
+            isNew,
+            discount,
+            rating,
+            className,
+            _id,
+          } = product;
+          return (
+            <SingleProductCard
+              url={`/shop/${_id}`}
+              images={images}
+              title={title}
+              price={price}
+              isNew={false}
+              discount={discount}
+              rating={rating}
+              className="w-[48%] sm:w-1/4 my-3"
+              key={product.id}
+            />
+          );
+        })}
         {currentPage * productsToShow < products.length && (
           <Button
             variant="outline"

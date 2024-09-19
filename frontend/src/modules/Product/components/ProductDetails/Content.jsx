@@ -11,22 +11,11 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import Rating from "@/assets/icons/Rating.jsx";
+import { useSelector } from "react-redux";
 
-const Content = () => {
-  const colors = [
-    {
-      src: "https://cdn.builder.io/api/v1/image/assets/TEMP/83c25f18edb7d0da9a3f7bfb4f88cc0820b61b91534d6e67e58fe6d7666f0b04?placeholderIfAbsent=true&apiKey=69881ca4efe24956bf287a23a24c936c",
-      alt: "Black color option",
-    },
-    {
-      src: "https://cdn.builder.io/api/v1/image/assets/TEMP/ce31a9d1b216fa30437381d96fc462e4578d0684f1479f23a0ae4d0631148111?placeholderIfAbsent=true&apiKey=69881ca4efe24956bf287a23a24c936c",
-      alt: "White color option",
-    },
-    {
-      src: "https://cdn.builder.io/api/v1/image/assets/TEMP/35adffd33ef3dbec76a82873ab8c4aac3ce424bb41e3cac7b423d3d085b1e916?placeholderIfAbsent=true&apiKey=69881ca4efe24956bf287a23a24c936c",
-      alt: "Brown color option",
-    },
-  ];
+const Content = ({ product }) => {
+  const count = useSelector((state) => state);
+
   const [selectedQuantity, setSelectedQuantity] = useState(1);
   const [isAdditionalInfoOpen, setAdditionalInfoOpen] = useState(false);
   const [isQuestionsOpen, setQuestionsOpen] = useState(false);
@@ -43,6 +32,10 @@ const Content = () => {
     });
   }, []);
 
+  const handleAddToCart = async () => {
+    console.log(count);
+  };
+
   return (
     <article className="flex flex-col w-1/2">
       <section className="flex flex-col w-full max-md:max-w-full">
@@ -55,20 +48,18 @@ const Content = () => {
 
           {/* Product Title */}
           <h1 className="text-left mt-4 text-4xl font-medium tracking-tight leading-none text-neutral-900">
-            Tray Table
+            {product?.title}
           </h1>
 
           {/* Product Description */}
           <p className="text-left  mt-4 w-full text-base leading-7 text-zinc-500 max-md:max-w-full">
-            Buy one or buy a few and make every space where you sit more
-            convenient. Light and easy to move around with removable tray top,
-            handy for serving snacks.
+            {product?.description}
           </p>
 
           {/* Price Display */}
           <div className="flex flex-wrap gap-3 items-center mt-4 w-full font-medium whitespace-nowrap max-md:max-w-full">
             <div className="self-stretch my-auto text-3xl tracking-tight leading-none text-neutral-900">
-              $199.00
+              ${product?.price}
             </div>
             <div className="self-stretch my-auto text-xl leading-snug text-zinc-500 line-through">
               $400.00
@@ -82,7 +73,7 @@ const Content = () => {
             Measurements
           </div>
           <div className="mt-2 text-xl leading-relaxed text-black">
-            17 1/2x20 5/8 &quot;
+            {product?.measurements}
           </div>
         </div>
 
@@ -93,15 +84,17 @@ const Content = () => {
               <div className="self-stretch my-auto">Choose Color</div>
               <MdKeyboardArrowRight size={24} />
             </div>
-            <div className="mt-2 text-xl leading-relaxed text-black">Black</div>
+            <div className="mt-2 text-xl leading-relaxed text-black">
+              {product?.colors?.[0].split(",").pop()}
+            </div>
           </div>
           <div className="flex gap-4 items-start mt-4">
-            {colors.map((color, index) => (
+            {Array.from({ length: 4 }).map((color, index) => (
               <img
                 key={index}
                 loading="lazy"
-                src={color.src}
-                alt={color.alt}
+                src={product?.images?.[0]}
+                alt={product?.title}
                 className="object-contain shrink-0 aspect-square w-[72px] cursor-pointer"
               />
             ))}
@@ -137,7 +130,10 @@ const Content = () => {
             Wishlist
           </Button>
         </div>
-        <Button className="h-[52px] gap-2 self-stretch px-10 py-2.5 mt-4 w-full text-lg font-medium tracking-tight leading-8 text-center text-white rounded-lg bg-neutral-900 max-md:px-5 max-md:max-w-full">
+        <Button
+          className="h-[52px] gap-2 self-stretch px-10 py-2.5 mt-4 w-full text-lg font-medium tracking-tight leading-8 text-center text-white rounded-lg bg-neutral-900 max-md:px-5 max-md:max-w-full"
+          onClick={handleAddToCart}
+        >
           Add to Cart
         </Button>
       </div>
@@ -150,7 +146,7 @@ const Content = () => {
         </div>
         <div className="flex gap-10 items-start mt-2">
           <div className="text-zinc-500">CATEGORY</div>
-          <div className="text-neutral-900">Living Room, Bedroom</div>
+          <div className="text-neutral-900">{product?.categories?.[0]}</div>
         </div>
       </div>
 
@@ -168,10 +164,7 @@ const Content = () => {
                   Details
                 </h3>
                 <p className="mt-2 text-xs leading-5 text-neutral-900 max-md:max-w-full">
-                  You can use the removable tray for serving. The design makes
-                  it easy to put the tray back after use since you place it
-                  directly on the table frame without having to fit it into any
-                  holes.
+                  {product?.additionalInfo}
                 </p>
               </div>
               <div className="flex flex-col mt-4 w-full max-md:max-w-full">
