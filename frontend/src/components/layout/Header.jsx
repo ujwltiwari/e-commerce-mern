@@ -1,9 +1,12 @@
 import { headerItems, headerIcons } from "@/constants/header.js";
-import React, { createElement } from "react";
+import { createElement } from "react";
 import { Separator } from "@/components/ui/separator.jsx";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  const cart = useSelector((state) => state.cart.cart);
+  console.log(cart);
   return (
     <>
       <header className="flex justify-between pt-4">
@@ -25,15 +28,26 @@ const Header = () => {
           ))}
         </div>
         <div className="flex gap-6 items-center cursor-pointer">
-          {headerIcons.map((item, idx) => (
-            <React.Fragment key={idx}>
-              {createElement(item.icon, {
-                width: 26,
-                height: 26,
-                size: 26,
-              })}
-            </React.Fragment>
-          ))}
+          {headerIcons.map((item, idx) => {
+            const cartCount = item.title === "Cart";
+            const hasLink = item.link;
+            return (
+              <Link to={`${hasLink ? item.link : "#"}`} key={idx}>
+                <div key={idx} className={cartCount ? "relative" : ""}>
+                  {createElement(item.icon, {
+                    width: 26,
+                    height: 26,
+                    size: 26,
+                  })}
+                  {cartCount && (
+                    <p className="text-[10px] text-white flex items-center justify-center w-[18px] h-[18px] rounded-full font-medium absolute top-[-10px] right-[-6px] bg-[#141718]">
+                      {cart.length}
+                    </p>
+                  )}
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </header>
       <Separator className="my-4" />

@@ -22,9 +22,19 @@ router.get('/', async (req, res) => {
 
 // Get details of a specific products using it's ID
 router.get('/:id', async (req, res) => {
-  console.log('inside get product', req, res)
   try {
     const { id: _id } = req.params
+    if (_id === 'all') {
+      console.log('inside all', req.query.productIds)
+      const productIds = req.query.productIds
+      if (!productIds) {
+        return res.status(400).send('No product IDs provided');
+      }
+      const products = await Product.find({
+        _id: { $in: productIds },
+      })
+      return res.json(products)
+    }
     console.log('_id', _id)
     const product = await Product.findById(_id)
     console.log('productId', _id)

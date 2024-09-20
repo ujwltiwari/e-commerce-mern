@@ -11,10 +11,15 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import Rating from "@/assets/icons/Rating.jsx";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import toast, { Toaster } from "react-hot-toast";
+import { toaster } from "@/helpers/helpers.js";
+import { addToCart } from "@/redux/cart/slice.js";
+import { addToWishlist } from "@/redux/wishlist/slice.js";
 
 const Content = ({ product }) => {
   const count = useSelector((state) => state);
+  const dispatch = useDispatch();
 
   const [selectedQuantity, setSelectedQuantity] = useState(1);
   const [isAdditionalInfoOpen, setAdditionalInfoOpen] = useState(false);
@@ -34,10 +39,19 @@ const Content = ({ product }) => {
 
   const handleAddToCart = async () => {
     console.log(count);
+    dispatch(addToCart(product._id));
+    toaster("success", "Added to Cart");
+  };
+
+  const handleAddToWishlist = async () => {
+    console.log(count);
+    dispatch(addToWishlist(product._id));
+    toaster("success", "Added to Wishlist");
   };
 
   return (
     <article className="flex flex-col w-1/2">
+      <Toaster />
       <section className="flex flex-col w-full max-md:max-w-full">
         <div className="flex flex-col pb-4 w-full border-b border-solid border-b-gray-200 max-md:max-w-full">
           {/* Review Summary */}
@@ -123,6 +137,7 @@ const Content = ({ product }) => {
             </Button>
           </div>
           <Button
+            onClick={handleAddToWishlist}
             variant="outline"
             className="w-[70%] flex gap-2 border-[#222] justify-center items-center px-10 py-2.5 text-lg font-medium tracking-tight leading-8 text-center whitespace-nowrap bg-white rounded-lg min-w-[240px] text-neutral-900 max-md:px-5 hover:bg-white h-[52px]"
           >

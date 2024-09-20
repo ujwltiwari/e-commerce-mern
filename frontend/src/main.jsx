@@ -13,7 +13,11 @@ import SignUpPage from "@/modules/Auth/screees/SignUp.jsx";
 import LoginPage from "@/modules/Auth/screees/Login.jsx";
 import ProfilePage from "@/modules/profile/screens/ProfilePage.jsx";
 import { Provider } from "react-redux";
-import store from "@/redux/store.js";
+import { store, persistor } from "@/redux/store.js";
+import { PersistGate } from "redux-persist/integration/react";
+import CartPage from "@/modules/Cart/screens/CartPage.jsx";
+import CartCheckoutPage from "@/modules/Cart/screens/CartCheckoutPage.jsx";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -55,11 +59,21 @@ const router = createBrowserRouter([
     path: "/profile",
     element: <ProfilePage />,
   },
+  {
+    path: "/cart",
+    element: <CartPage />,
+  },
+  {
+    path: "/cart/checkout",
+    element: <CartCheckoutPage />,
+  },
 ]);
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Provider store={store}>
-      <RouterProvider router={router} />
+      <PersistGate loading={null} persistor={persistor}>
+        <RouterProvider router={router} />
+      </PersistGate>
     </Provider>
   </StrictMode>,
 );

@@ -23,6 +23,6 @@ export const headerItems = [
 
 export const headerIcons = [
   { icon: CiSearch, title: "Search" },
-  { icon: Cart, title: "Cart" },
+  { icon: Cart, title: "Cart", link: "/cart" },
   { icon: VscAccount, title: "Account" },
 ];

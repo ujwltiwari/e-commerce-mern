@@ -12,7 +12,6 @@ const Sidebar = ({ className }) => {
     setIsOpen((prevState) => !prevState);
   };
   const pathname = useLocation().pathname.split("/");
-  // console.log("currentRoute", currentRoute);
   let currentRoute = pathname[pathname.length - 1];
   if (currentRoute === "create" || currentRoute === "update") {
     currentRoute = textCapitalizer("products");

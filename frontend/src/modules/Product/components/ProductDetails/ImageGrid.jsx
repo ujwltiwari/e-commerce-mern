@@ -2,7 +2,7 @@ import SingleProductCard from "@/modules/Product/components/ProductCard/SinglePr
 
 const ImageGrid = ({ images }) => {
   return (
-    <div className="flex flex-wrap justify-start items-start gap-4 w-1/2">
+    <div className="flex flex-wrap justify-start items-start gap-4 w-1/2 !h-fit">
       {images.map((image, index) => (
         <SingleProductCard images={image} key={index} className="w-[40%]" />
       ))}
